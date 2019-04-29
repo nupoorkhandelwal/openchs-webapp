@@ -42,6 +42,9 @@ class FilterProcessor {
         let _filter = Object.assign({}, filter);
         if (_filter.hasOwnProperty('searchURI'))
             delete _filter.searchURI;
+        if(_filter.lineage){
+            _filter.lineage = JSON.stringify(_filter.lineage);
+        }
         return stringify(_filter);
     }
 }
